@@ -1,0 +1,24 @@
+<html>
+
+<body>
+  <script>
+    // ?? (null 병합 연산자)를 사용하면 짧은 문법으로 여러 피연산자중
+    // 그 값이 확정되어있는 변수를 찾을 수 있습니다.
+    // a ?? b 의 평가 결과는 다음과 같습니다.
+    // a가 null도 아니고 undefined도 아니면 a
+    // 그 외의 경우는 b
+
+    // 아래 코드와 동일한 동작을 하는 것입니다.
+    x = (a !== null && a !== undefined) ? a : b;
+
+    let firstName = null;
+    let lastName = null;
+    let nickName = "바이올렛";
+
+    // null이나 undefined가 아닌 첫 번째 피연산자
+    alert(firstName ?? lastName ?? nickName ?? "익명의 사용자"); // 바이올렛
+    // firstName ?? lastName -> firstName이 null 이므로 lastName을 반환
+  </script>
+</body>
+
+</html>

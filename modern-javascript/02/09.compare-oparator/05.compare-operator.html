@@ -1,0 +1,17 @@
+<html>
+
+<body>
+  <script>
+    // 동등연산자와 기타비교연산자는 동작 방식이 다르다
+    // 기타 비교연산자는 null이 숫자형으로 바뀜!
+    alert(null > 0); // false
+    alert(null == 0); // false
+    alert(null >= 0); // true
+
+    // ==는 피연산자가 undefined와 null 일때 형변환을 안합니다.
+    // undefined와 null을 비교할때면 true를 반환합니다.
+
+  </script>
+</body>
+
+</html>

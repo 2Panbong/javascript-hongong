@@ -1,0 +1,37 @@
+<html>
+
+<body>
+  <script>
+    // 자바스크립트에서으 OR(||) 연산자는 첫번째 true를 찾습니다.
+    result = value1 || value2 || value3;
+    // 왼쪽부터 오른쪽으로 피연산자를 평가합니다
+    // 피연산자를 각각 불린형으로 변환합니다.
+    // 변환 후 그 값이 true면 멈추고 해당 피연산자의 변환 전 원래값을
+    // 반환합니다.  
+    // 피연산자를 모두 평가한 경우엔 마지막 피연산자를 반환합니다.
+
+    // 중요한 점은 반환 값이 형 변환을 하지 않은 원래 값입니다.
+
+    alert(1 || 0); // 1 (1은 truthy임)
+
+    alert(null || 1); // 1 (1은 truthy임)
+    alert(null || 0 || 1); // 1 (1은 truthy임)
+
+    alert(undefined || null || 0); // 0 (모두 falsy이므로, 마지막 값을 반환함)
+
+    let firstName = "";
+    let lastName = "";
+    let nickName = "바이올렛";
+
+    alert(firstName || lastName || nickName || "익명"); // 바이올렛
+
+    // 첫번째는 true에서 멈추고 두번째는 마지막것을 실행합니다.
+    // true를 만나면 나머지 값들을 건드리지 않은채 평가를 멈추는걸 단락평가라고합니다
+
+    true || alert("not printed");
+    false || alert("printed");
+
+  </script>
+</body>
+
+</html>

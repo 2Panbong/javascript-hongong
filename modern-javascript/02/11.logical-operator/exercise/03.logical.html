@@ -1,0 +1,17 @@
+<html>
+
+<body>
+  <script>
+    //AND 연산자의 피연산자가 alert라면? 결과는?
+    alert(alert(1) && alert(2));
+    // 1출력후 undefined를 반환합니다
+
+    // 왜냐하면 alert는 메시지만 띄워줄뿐 의미있는 값을 반환하진 않습니다.
+    // alert(1)을 띄운 다음 평가결과는 undefined 이기때문에 false입니다.
+    // 그래서 alert(2)를 실행시키지않고 undefined라는 값을 반환하고 그것을 띄워줍니다.
+    // 또한 aler(undefined)는 평가 결과가 undefined가 되는것이죠
+
+  </script>
+</body>
+
+</html>

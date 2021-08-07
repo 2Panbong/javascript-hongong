@@ -1,0 +1,33 @@
+<html>
+
+<body>
+  <script>
+    // 로그인 구현하기
+    // 사용자가 Admin을 입력하면 비밀번호를 물어보는 Prompt이용
+    // 아무런 입력을 안하거나 esc누르면 '취소되었습니다 메시지 출력'
+    // 틀린 비밀번호 입력시 '인증에 실패하였습니다' 메시지 출력
+    // 맞는 비밀번호 'TheMaster' 입력시 '환영합니다'메시지 출력
+    // 빈 문자열을 입력하거나 입력 취소시 '취소 되었습니다 '메시지 출력
+    // 중첩if문을 사용하여라
+    // 힌트 프롬포트창에 아무것도 입력하지않으면 '', esc 누르면 null이 반환됨
+
+    let begin = prompt("who's there?", '');
+
+    if (begin === 'Admin') {
+      begin = prompt("What's Password?", '')
+      if (begin === 'TheMaster') {
+        alert('Welcome!');
+      } else if (begin == '' || begin == null) {
+        alert('Canceled');
+      } else {
+        alert('Wrong password');
+      }
+    } else if (begin == '' || begin == null) {
+      alert("Canceled");
+    } else { alert("I don't know you"); }
+
+
+  </script>
+</body>
+
+</html>

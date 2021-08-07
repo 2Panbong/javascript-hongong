@@ -1,0 +1,22 @@
+<html>
+
+<body>
+  <script>
+    let accessAllowed;
+    let age = prompt('나이를 입력해 주세요.', '');
+
+    if (age > 18) {
+      accessAllowed = true;
+    } else {
+      accessAllowed = false;
+    }
+
+    alert(accessAllowed);
+
+    // 이런식으로 간단하게 사용 할 수 있지만 많이 쓰이는 적은 없습니다.
+
+    let accessAllowed = (age > 18) ? true : false;
+  </script>
+</body>
+
+</html>

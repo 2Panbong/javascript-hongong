@@ -1,0 +1,14 @@
+<html>
+
+<body>
+  <script>
+    //if 에 관한 고찰
+    // 어떤 alert가 실행 될까요
+    if (-1 || 0) alert('first'); //-1은 true이므로 실행
+    if (-1 && 0) alert('second'); // 0은 false 이므로 실행 안됨
+    if (null || -1 && 1) alert('third'); // null||1이므로   실행됨
+
+  </script>
+</body>
+
+</html>

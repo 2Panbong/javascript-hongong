@@ -1,0 +1,21 @@
+<html>
+
+<body>
+  <script>
+    // 비교하려는 값의 자료형이 다르다면 자바스크립트는 이 값들을 숫자형으로 바꿉니다
+    alert('2' > 1); // true, 문자열 '2'가 숫자 2로 변환된 후 비교가 진행됩니다.
+    alert('01' == 1); // true, 문자열 '01'이 숫자 1로 변환된 후 비교가 진행됩니다.
+
+    // 이상한 상황이죠?
+    let a = 0;
+    alert(Boolean(a)); // false
+
+    let b = "0";
+    alert(Boolean(b)); // true 문자형이 존재해서 true로 되고
+
+    alert(a == b); // true! <- ==동등연산자를 사용하면 숫자형으로계산함
+
+  </script>
+</body>
+
+</html>
