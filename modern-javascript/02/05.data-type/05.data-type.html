@@ -1,0 +1,40 @@
+<html>
+
+<body>
+  <script>
+    // 객체(Object)형
+    // 객체를 제외한 다른 자료형은 원시자료형이라고 부름
+    // 객체는 데이터 컬렉션이나 복잡한 개체를 표현할 수있습니다
+
+    // typeof 연산자
+    // 인수의 자료형을 반환합니다.
+
+    // 연산자 : typeof x
+    // 함수 : typeof (x)
+    // 괄호가 있든 없든 상관 없습니다.
+
+    typeof undefined // "undefined"
+
+    typeof 0 // "number"
+
+    typeof 10n // "bigint"
+
+    typeof true // "boolean"
+
+    typeof "foo" // "string"
+
+    // 심볼형은 객체의 고유한 식별자를 만들때 사용됨
+    typeof Symbol("id") // "symbol"
+
+    // 수학 연산을 제공하는 내장 객체이므로 object를 반환
+    typeof Math // "object"  (1)
+
+    // null은 객체가 아니지만 하위 호환성을 유지하기위해 이렇게 남겨둔것
+    typeof null // "object"  (2)
+
+    // 함수는 객체에 속하고 함수형은 따로없다. 하위 호환성 유지를 위해 남겨둠
+    typeof alert // "function"  (3)
+  </script>
+</body>
+
+</html>

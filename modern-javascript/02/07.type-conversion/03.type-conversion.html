@@ -1,0 +1,26 @@
+<html>
+
+<body>
+  <script>
+    // Boolean 형으로 변환
+    // 숫자0,'',null,undefined,NaN과 같은 것들은 false가 됨
+    // 그 외는 true가 됩니다.
+
+    alert(Boolean(1)); // 숫자 1(true)
+    alert(Boolean(0)); // 숫자 0(false)
+
+    alert(Boolean("hello")); // 문자열(true)
+    alert(Boolean("")); // 빈 문자열(false)
+
+    // 문자열 "0"은 true입니다.
+    alert(Boolean("0")); // true
+    alert(Boolean(" ")); // 공백이 있는 문자열도 비어있지 않은 문자열이기 때문에 
+    // true로 변환됩니다.
+
+    // 숫자형으로 변환시 undefined는 0이아닌 NaN이 됨
+    // 문자열 "0"과 " "같은 공백은 불린형으로 변환시 true가 되는걸 주의
+
+  </script>
+</body>
+
+</html>

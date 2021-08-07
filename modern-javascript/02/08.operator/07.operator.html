@@ -1,0 +1,34 @@
+<html>
+
+<body>
+  <script>
+    // 전위형은 증가/감소 후의 새로운 값을 반영합니다.
+    let counter = 1;
+    let a = ++counter; // (*)
+
+    alert(a); // 2
+
+    // 후위형은 증가/감소전의 기존 값을 반영합니다.
+    let counter = 1;
+    let a = counter++; // (*) ++counter를 counter++로 바꿈
+
+    alert(a); // 1
+
+    // 반환값을 사용하지 않는다면 전위형과 후위형엔 차이가 없음
+    let counter = 0;
+    counter++;
+    ++counter;
+    alert(counter); // 2, 위 두 라인은 동일한 연산을 수행합니다.
+
+    //--------------------------
+    let counter = 1;
+    alert(2 * counter++); // counter++는 '기존'값을 반환하기 때문에 2가 출력됩니다.
+
+    // 위 코드는 보기 어려울수 있으므로 이렇게 바꾸는 것이 좋습니다.
+    let counter = 1;
+    alert(2 * counter);
+    counter++;
+  </script>
+</body>
+
+</html>
