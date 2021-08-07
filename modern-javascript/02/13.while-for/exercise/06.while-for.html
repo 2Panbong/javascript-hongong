@@ -1,0 +1,24 @@
+<html>
+
+<body>
+  <script>
+    // 사용자가 유요한 값을 입력할 때까지 프롬포트 창 띄우기
+    // 100보다 큰숫자를 입력하도록 프롬포트창을 띄워라
+    // 조건에 맞지 않는 값을 입력했을때 반복문을 통해 동일한 창 띄우기
+    // 사용자가 100을 초과하거나 취소버튼 눌렀거나 아무것도 입력하지 않으면
+    // 프롬포트 창을 띄우지 않아도된다.
+
+    let numberGreater = prompt('100보다 큰 숫자를 입력해보세요', '');
+
+    if (numberGreater > 100 || numberGreater == undefined || numberGreater == '') numberGreater = undefined;
+
+    while (numberGreater <= 100) {
+
+      numberGreater = prompt('100보다 큰 숫자를 입력해보세요', '');
+
+      if (numberGreater > 100 || numberGreater == undefined || numberGreater == '') break;
+    }
+  </script>
+</body>
+
+</html>

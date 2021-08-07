@@ -1,0 +1,30 @@
+<html>
+
+<body>
+  <script>
+    // for 반복문
+
+    for (begin; condition; step) {
+      // ... 반복문 본문 ...
+    }
+    // begin 은 반복문에 진입할 때 딱 한번 실행됨
+    // condition은 반복마다 해당 조건이 확인되고 false라면 반복문 종료
+    // 반복문의 본문은 condition이 true일때 계속 실행
+    // step 은 각 반복문의 본문이 실행된 이후에 실행됩니다.
+    // begin->condition->반복문실행->step->condition->반복문실행-step...
+
+    // for (let i = 0; i < 3; i++) alert(i)
+
+    // begin을 실행함
+    let i = 0
+    // condition이 truthy이면 → body를 실행한 후, step을 실행함
+    if (i < 3) { alert(i); i++ }
+    // condition이 truthy이면 → body를 실행한 후, step을 실행함
+    if (i < 3) { alert(i); i++ }
+    // condition이 truthy이면 → body를 실행한 후, step을 실행함
+    if (i < 3) { alert(i); i++ }
+// i == 3이므로 반복문 종료
+  </script>
+</body>
+
+</html>

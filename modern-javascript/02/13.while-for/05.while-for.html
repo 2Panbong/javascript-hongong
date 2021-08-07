@@ -1,0 +1,26 @@
+<html>
+
+<body>
+  <script>
+    // 반복문 빠져나오기
+    // 대부분 반복문의 조건이 false가 되면 종료되지만 break를 사용할 수도 있습니다.
+
+    let sum = 0;
+
+    while (true) {
+
+      let value = +prompt("숫자를 입력하세요.", '');
+
+      if (!value) break; // (*)
+      // 아무것도 입력하지 않거나 취소를 했거나 문자를 입력하면 활성화됩니다.
+
+      sum += value;
+
+    }
+    alert('합계: ' + sum);
+    // 본문의 가운데나 여러곳에서 조건을 확인해야 한다면 반복문+break가좋습니다
+
+  </script>
+</body>
+
+</html>
