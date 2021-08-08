@@ -1,0 +1,26 @@
+<html>
+
+<body>
+  <script>
+    // for in 반복문
+    // 객체의 모든 프로퍼티를 순회 할 수 있습니다!
+    for (key in object) {
+      // 각 프로퍼티 키(key)를 이용하여 본문(body)을 실행합니다.
+    }
+
+    let user = {
+      name: "John",
+      age: 30,
+      isAdmin: true
+    };
+
+    for (let key in user) { // key 라는 반복 변수를 선언!
+      // 키
+      alert(key);  // name, age, isAdmin
+      // 키에 해당하는 값
+      alert(user[key]); // John, 30, true
+    }
+  </script>
+</body>
+
+</html>

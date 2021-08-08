@@ -1,0 +1,38 @@
+<html>
+
+<body>
+  <script>
+    // 프로퍼티 값 두배로 부풀리기
+    //객체 obj의 프로퍼티값이 숫자라면 그 값을 두배 해주는 함수
+    // multiplyNumeric(obj)를 만들어 보세요
+
+    function multiplyNumeric(obj) {
+      for (let prop in obj) {
+        if (typeof obj[prop] == 'number') {
+          obj[prop] *= 2;
+        }
+      }
+    }
+
+    // 함수 호출 전
+    let menu = {
+      width: 200,
+      height: 300,
+      title: "My menu"
+    };
+
+    multiplyNumeric(menu);
+
+    // 함수 호출 후
+    menu = {
+      width: 400,
+      height: 600,
+      title: "My menu"
+    };
+    // typeof를 사용하면 프로퍼티값이 숫자인지 확인가능
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<html>
+
+<body>
+  <script>
+    // 프로퍼티 이름의 제약사항
+    // 예약어를 키로 사용해도 괜찮습니다.
+    let obj = {
+      for: 1,
+      let: 2,
+      return: 3
+    };
+
+    alert(obj.for + obj.let + obj.return);  // 6
+    // 문자형이나 심볼형에 속하지 않은 값은 문자열로 자동 형변환됩니다.
+
+    let obj = {
+      0: "test" // "0": "test"와 동일합니다.
+    };
+
+    // 숫자 0은 문자열 "0"으로 변환되기 때문에 두 얼럿 창은 같은 프로퍼티에 접근합니다,
+    alert(obj["0"]); // test
+    alert(obj[0]); // test (동일한 프로퍼티)
+
+    // __proto__는 특이사항이다.
+    let obj = {};
+    obj.__proto__ = 5; // 숫자를 할당합니다.
+    alert(obj.__proto__); // [object Object] - 숫자를 할당했지만 값은 객체가 되었습니다. 
+    // 의도한대로 동작하지 않네요.
+    // proto는 나중에 더 알아 보겠습니다.
+  </script>
+</body>
+
+</html>

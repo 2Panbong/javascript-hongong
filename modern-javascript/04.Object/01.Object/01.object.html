@@ -1,0 +1,49 @@
+<html>
+
+<body>
+  <script>
+    // 객체를 제외한 7가지 자료형은 원시형이라고 부름
+    // 객체는 중괄호 {...}를 ㅣ용해 만들 수있음
+
+    // 빈 객체를 만드는 2가지 방법
+    let user = new Object();// '객체 생성자'문법
+    let user = {}; // 객체 리터럴 문법
+    // 주로 중괄호를 이용한 객체 리터럴 문법을 많이 사용함
+
+    // 중괄호 안에는 프로퍼티: 값 쌍으로 구성된게 들어감
+
+    let user = { // 객체
+      name: "John", // 키:"name:, 값 : "John"
+      age: 30 // 키 : "age", 값:30
+    }
+    // 정확히는 ket가 아닌 프로퍼티라고합니다!
+
+    // 프로퍼티 값 얻기
+    alert(user.name); // John
+    alert(user.age); // 30;
+    // 프로퍼티 값엔 모든 자료형이 올 수 있음
+    user.isAdmin = true;// 새로운 불린형 프로퍼티 추가
+    delete user.age; // 프로퍼티 삭제!
+
+    // 여러 단어를 조합해 프로퍼티 이름을 만들면 따옴표로 묶어라
+    let user = {
+      name = "John",
+      age = 30,
+      "likes birds": true // 복수의 단어는 따옴표
+      //마지막 프로퍼티는 쉼표로 끝날 수도 있음
+    }
+
+    // 상수 객체는 수정될 수 있음
+    const user = {
+      name: "John"
+    };
+
+    user.name = "Pete"; // (*)
+
+    alert(user.name); // Pete
+    // 상수 자체가 그 안의 값은 바뀔수 있다.
+
+  </script>
+</body>
+
+</html>

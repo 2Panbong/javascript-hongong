@@ -1,0 +1,36 @@
+<html>
+
+<body>
+  <script>
+    // 대괄호 표기법
+    let user = {
+      name: "John",
+      age: 30,
+      "likes birds": true  // 복수의 단어는 따옴표로 묶어야 합니다.
+    };
+
+    // 문법 에러가 발생합니다.
+    // 여러 단어를 조합해 이름을 만든경우는 점 표기법으로 접근이 불가능
+    user.likes birds = true
+    // . 은 이름이 유요한 변수 식별자인 경우에만 사용 가능
+    // 유효한 식별자는 공백이없고 숫자로 시작하지않고 $,_가 없어야함
+    //이 때에 대괄호 표기법으로 하는것입니다.
+    // 대괄호 표기법은 키에 어떤 문자열이 있던지 상관없이 동작함
+
+    let user = {};
+
+    // set
+    user["likes birds"] = true;
+
+    // get
+    alert(user["likes birds"]); // true
+
+    // delete
+    delete user["likes birds"];
+    // 문자열을 사용할땐 문자열을 따옴표로 묶어줘야 합니다.
+    // 따옴표의 종류는 상관없다.
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<html>
+
+<body>
+  <script>
+    // 프로퍼티 합계 구하기
+    let salaries = {
+      John: 100,
+      Ann: 160,
+      Pete: 130
+    };
+    // 팀원들의 월급을 합한걸 sum에 저장하고
+    // salaries가 비어있다면 sum에 0이 저장되어야합니다.  
+
+    let sum = 0;
+    for (let prop in salaries) {
+      sum += salaries[prop];
+    }
+    alert(sum); // 390
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html>
+
+<body>
+  <script>
+    // 단축 프로퍼티
+    function makeUser(name, age) {
+      return {
+        name: name,
+        age: age,
+        // .. 등등
+      };
+    }
+
+    let user = makeUser("John", 30);
+    alert(user.name); // John
+    // 이름과 값이 변수의 이름과 동일합니다.
+    // 이럴때는 이렇게 바꿀 수 있습니다.
+
+    function makeUser(name, age) {
+      return {
+        name, // name: name 과 같음
+        age,  // age: age 와 같음
+        // ...
+      };
+    } // 물론 한 객체에서 일반 프로터티와 단축 프로퍼티를 동시사용도 가능합니다.
+
+  </script>
+</body>
+
+</html>
