@@ -1,0 +1,29 @@
+<html>
+
+<body>
+
+  <script>
+    // ? 나 ||를 사용하여 함수를 다시 작성해보세요
+    // if문을 사용하지 않고 동일한 동작을 하는 함수를 작성하세요
+    // 물음표 연산자?를 사용해서 작성하는 것과
+    // ||를 사용해서 본문을 작성하는 총 2개를 제출해보세요
+
+    // function checkAge(age) {
+    //   if (age > 18) {
+    //     return true;
+    //   } else {
+    //     return confirm('보호자의 동의를 받으셨나요?');
+    //   }
+    // }
+
+    function checkAge(age) {
+      return age > 18 ? true : confirm('보호자의 동의를 받으셨나요?');
+    }
+
+    function checkAge(age) {
+      return age > 18 || confirm('보호자의 동의를 받으셨나요?');
+    }
+  </script>
+</body>
+
+</html>

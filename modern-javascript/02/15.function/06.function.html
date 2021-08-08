@@ -1,0 +1,24 @@
+<html>
+
+<body>
+
+  <script>
+    // 기본값
+    // 매개변수에 갑을 전달하지 않으면 그 값은 undefined가 됩니다.
+
+    function showMessage(from, text = "no text given") {
+      alert(form + ": " + text);
+    }
+    showMessage("Ann"); // Ann: no text given;
+    // 만약 text에 기본값을 안넣었다면 Ann : undefined가 되었겠죠?
+
+    //----------------------------------------------
+
+    function showMessage(from, text = anotherFunction()) {
+      // anotherFunction()은 text값이 없을 때만 호출됨
+      // anotherFunction()의 반환 값이 text의 값이 됨
+    } // 한마디로 함수의 매개 변수로 함수가 올 수도 있습니다!
+  </script>
+</body>
+
+</html>

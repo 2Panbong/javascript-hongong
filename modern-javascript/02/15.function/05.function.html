@@ -1,0 +1,32 @@
+<html>
+
+<body>
+
+  <script>
+    // 매개변수
+    function showMessage(from, text) { // 매개변수 2개
+      alert(from + ':' + text);
+    }
+
+    showMessage('Ann', 'Hello'); // Ann : Hello 출력 ,로 매개변수 구분해줌
+    showMessage('Ann', "What's up?"); // Ann : What's up?
+
+    //---------------------------------------------
+
+    function showMessage(from, text) {
+
+      from = '*' + from + '*'; // "from"을 좀 더 멋지게 꾸며줍니다.
+
+      alert(from + ': ' + text);
+    }
+
+    let from = "Ann"; // 전역 변수 이기 때문에 값이 변환 되지 않음
+
+    showMessage(from, "Hello"); // *Ann*: Hello
+
+    // 함수는 복사된 값을 사용하기 때문에 바깥의 "from"은 값이 변경되지 않습니다.
+    alert(from); // Ann
+  </script>
+</body>
+
+</html>

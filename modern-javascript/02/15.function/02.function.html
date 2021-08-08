@@ -1,0 +1,22 @@
+<html>
+
+<body>
+
+  <script>
+    // 지역변수
+    function showMessage() {
+      let message = "안녕하세요!"; // 지역 변수
+
+      alert(message);
+    }
+
+    showMessage(); // 안녕하세요!
+
+    alert(message); // 에러가 나옵니다
+
+    // message라는 변수는 블럭 코드라고 생각하면 됩니다.
+    // showMessage라는 함수안에서만 사용이 가능합니다.
+  </script>
+</body>
+
+</html>

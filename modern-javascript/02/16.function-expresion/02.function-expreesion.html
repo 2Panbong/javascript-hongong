@@ -1,0 +1,26 @@
+<html>
+
+<body>
+  <script>
+    // 콜백 함수
+
+    function ask(question, yes, no) {
+      if (confirm(question)) yes()
+      else no();
+    }
+
+    function showOk() { alert('동의 했습니다.'); }
+
+    function showCancel() { alert('취소버튼을 눌렀습니다.'); }
+
+    // 사용법: 함수 showOK와 showCancel가 ask 함수의 인수로 전달
+
+    ask("동의하십니까?", showOk, showCancel)
+
+    // 함수 ask의 인수 showOk와 showCancel은 콜백함수라고합니다.
+    // 함수를 함수의 인수로 전달하고 필요하다면 인수로 전달한
+    // 그 함수를 나중에 호출하는 것이 콜백 함수이다!
+  </script>
+</body>
+
+</html>

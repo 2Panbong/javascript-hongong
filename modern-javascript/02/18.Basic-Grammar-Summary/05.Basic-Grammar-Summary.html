@@ -1,0 +1,35 @@
+<html>
+
+<body>
+  <script>
+    //반복문
+    while (condition) { }
+    do { } while (condition) { }
+    for (let i = 0; i < 10; i++) { }
+    // for안에서 선언한 변수는 그 안에서만 사용가능
+    // 하지만 외부에서 선언한것은  for문안에서도 사용가능
+    // break나 continue는 반복문 전체나 실행중인 반복문을 빠져나가는데 사용
+    // label은 중첩 반복문을 빠져나갈때 사용
+
+    // switch문
+    // if문을 사용해 재작성 가능함
+    // switch문은 조건을 확인할때 내부적으로 일치 연산자(===)를 사용합니다
+
+    let age = prompt('나이를 알려주세요.', 18);
+
+    switch (age) {
+      case 18:
+        alert("Won't work"); // prompt 함수는 항상 문자열을 반환하므로, 이 case문엔 절대 도달할 수 없습니다.
+        break;
+
+      case "18":
+        alert("낭랑 18세이시군요!");
+        break;
+
+      default:
+        alert("어떤 case문에도 해당하지 않습니다.");
+    }
+  </script>
+</body>
+
+</html>

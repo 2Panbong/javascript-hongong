@@ -1,0 +1,23 @@
+<html>
+
+<body>
+  <script>
+    // 익명 함수
+    function ask(question, yes, no) {
+      if (confirm(question)) yes()
+      else no();
+    }
+
+    ask(
+      "동의하십니까?",
+      function () { alert("동의하셨습니다."); },
+      function () { alert("취소 버튼을 누르셨습니다."); }
+    );
+
+    // 이름없이 선언한 함수를 익명함수라고합니다.
+  // 익명함수는 바깥에선 접근 할수 없습니다!
+
+  </script>
+</body>
+
+</html>

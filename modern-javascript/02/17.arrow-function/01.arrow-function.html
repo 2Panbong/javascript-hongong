@@ -1,0 +1,36 @@
+<html>
+
+<body>
+  <script>
+    // 화살표 함수!
+    // let func = (arg1, arg2, ...argN) => expression
+
+    let func = function (arg1, arg2, ...argN) {
+      return expression;
+    };// 이 함수의 축약 버전입니다.
+
+    let sum = (a, b) => a + b;
+
+    /* 위 화살표 함수는 아래 함수의 축약 버전입니다.
+    
+    let sum = function(a, b) {
+      return a + b;
+    };
+    */
+
+    alert(sum(1, 2)); // 3
+    //--------------------------
+    // 인수가 하나밖에 없다면 괄호()를 생략할 수있습니다.
+    let double = n => n * 2;
+    // let double = function(n) { return n * 2 }과 거의 동일합니다.
+
+    alert(double(3)); // 6
+    //-------------------------------
+    // 하지만 인수가 하나도 없을때는 괄호를 비워놓을 수없습니다.
+    let sayHi = () => alert("안녕하세요!");
+
+    sayHi();
+  </script>
+</body>
+
+</html>

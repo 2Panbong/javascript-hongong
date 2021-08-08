@@ -1,0 +1,29 @@
+<html>
+
+<body>
+
+  <script>
+    // else는 정말 필요한가?
+    // 만약 else문을 삭제해도 기존 코드와 동일하게 동작하는가?
+
+    function checkAge(age) {
+      if (age > 18) {
+        return true;
+      } else {
+        // ...
+        return confirm('보호자의 동의를 받으셨나요?');
+      }
+    }
+
+    function checkAge(age) {
+      if (age > 18) {
+        return true;
+      }
+      // ...
+      return confirm('보호자의 동의를 받으셨나요?');
+    }
+    // 동일하게 동작을 합니다.
+  </script>
+</body>
+
+</html>

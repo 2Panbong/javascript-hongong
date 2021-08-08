@@ -1,0 +1,37 @@
+<html>
+
+<body>
+  <script>
+    // function(함수)
+    // 함수 선언문
+    function sum(a, b) {
+      let result = a + b;
+      return result;
+    }
+
+    // 함수 표현식
+    let sum = function (a, b) {
+      let result = a + b;
+      return result;
+    }
+
+    // 화살표 함수
+    let sum = (a, b) => a + b;
+
+    let sum = (a, b) => {
+      // 여러줄의 코드 작성
+      return a + b;
+    }
+
+    // 인수가 없는 경우
+    let sayHi = () => alert("Hello");
+
+    // 인수가 하나인 경우
+    let double = n => n + 2;
+
+    // 함수는 항상 무언갈 반환합니다.
+    // return이 없을땐 undefined를 반환합니다!
+  </script>
+</body>
+
+</html>

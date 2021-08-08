@@ -1,0 +1,50 @@
+<html>
+
+<body>
+
+  <script>
+    // 반환 값
+    function sum(a, b) {
+      return a + b;
+    }
+
+    let result = sum(1, 2);
+    alert(result); // 3
+    // return은 함수 내 어디서든 사용 할 수 있습니다.
+    // return을 만나면 함수 실행이 종료되고 그 값을 반환합니다.
+
+    //----------------------------------------------------------
+
+    function checkAge(age) {
+      if (age >= 18) {
+        return true;
+      } else {
+        return confirm('보호자의 동의를 받으셨나요?');
+      }
+    }
+
+    let age = prompt('나이를 알려주세요', 18);
+
+    if (checkAge(age)) {
+      alert('접속 허용');
+    } else {
+      alert('접속 차단');
+    }
+
+    function showMovie(age) {
+      if (!checkAge(age)) {
+        return;
+      }
+
+      alert("영화 상영"); // (*)
+      // ...
+    }// checkAge(age)가 fasle라면 실행이 안됟서 alert창을 실행하지 않습니다.
+
+    // return문이 없ㄱ나 retrun 지시자만 있다면 undefined를 반환합니다.
+    // return과 반환하고싶은 값 사이에 줄(엔터)를 삽입하면 안됨
+    //왜냐하면 자바스크립트는 return문 끝에 세미콜론을 자동으로 넣기 때문
+    // 아니면 () 괄호를 써서 하면 됩니다.
+  </script>
+</body>
+
+</html>

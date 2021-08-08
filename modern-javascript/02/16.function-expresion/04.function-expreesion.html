@@ -1,0 +1,44 @@
+<html>
+
+<body>
+  <script>
+    // 함수 표현식 vs 함수 선언문
+
+    //선언문은 주요 코드 흐름중간에 독자적인 형태로 함수가 존재
+    function sum(a, b) {
+      return a + b;
+    }
+
+    // 표현식은 표현식이나 구문구성 내부에 함수가 생성
+    let sum = function (a, b) {
+      return a + b;
+    };
+
+    // 함수표현식은 실제 실행 흐름이 해당 함수에 도달했을때
+    // 함수를 생성합니다.
+
+    // 함수 선언문은 정의되기전에도 호출할 수 있다.
+
+    // 자바 스크립트는 스크립트를 실행하기전에 전역에 선언된 함수선언문을 찾고
+    // 해당 함수를 생성합니다.
+    // 스크립트는 함수 선언문이 처리된이후에 실행됨
+
+    // 이게 가능합니다.
+    sayHi("John"); // Hello, John
+
+    function sayHi(name) {
+      alert(`Hello, ${name}`);
+    }
+
+    //이건 불가능
+    sayHi("John"); // error!
+
+    let sayHi = function (name) {  // (*) 마술은 일어나지 않습니다.
+      alert(`Hello, ${name}`);
+    };
+
+
+  </script>
+</body>
+
+</html>

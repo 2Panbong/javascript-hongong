@@ -1,0 +1,44 @@
+<html>
+
+<body>
+
+  <script>
+    let userName = 'John';
+
+    function showMessage() {
+      userName = "Bob"; // 외부 변수를 수정함
+
+      let message = 'Hello, ' + userName;
+      alert(message);
+    }
+
+    alert(userName); // 함수호출 전이기 때문에 john이 출력
+
+    showMessage();//함수 호출
+
+    alert(userName); // 함수에 의해 Bob으로 값이 바뀜
+    // 외부 변수는 지역 변수가 없을 때만 사용 가능
+
+    //------------------------------------------
+
+    let userName = 'John';
+
+    function showMessage() {
+      let userName = "Bob"; // 같은 이름을 가진 지역 변수를 선언합니다.
+
+      let message = 'Hello, ' + userName; // Bob
+      alert(message);
+    }
+
+    // 함수는 내부 변수인 userName만 사용합니다,
+    showMessage();
+
+    alert(userName); // 함수는 외부 변수에 접근하지 않습니다. 따라서 값이 변경되지 않고, John이 출력됩니다.
+
+    // 함수 외부에 선언된 변수는 전역변수(global variable)라고 부릅니다
+    // 같은 이름을 가진 지역 변수에 의해 가려지지만 않으면 모든함수에만 호출가능
+    // 변수는 연관되는 함수 내에 선언하고 전역변수는 되도록 사용안하는게 좋다
+  </script>
+</body>
+
+</html>

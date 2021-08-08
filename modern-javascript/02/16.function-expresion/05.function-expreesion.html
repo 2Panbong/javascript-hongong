@@ -1,0 +1,87 @@
+<html>
+
+<body>
+  <script>
+    // 세번째 차이점은 스코프입니다.
+    // 함수 선언문ㅇ니 코드 블록내에 위치하면 해당 함수는 블록내 어디서든
+    // 접근할수있고 블록 밖에서는 함수에 접근불가합니다.
+
+    let age = prompt("나이를 알려주세요.", 18);
+
+    // 조건에 따라 함수를 선언함
+    if (age < 18) {
+
+      function welcome() {
+        alert("안녕!");
+      }
+
+    } else {
+
+      function welcome() {
+        alert("안녕하세요!");
+      }
+
+    }
+
+    // 함수를 나중에 호출합니다.
+    welcome(); // Error: welcome is not defined
+
+    //------------------------------------------
+    let age = 16; // 16을 저장했다 가정합시다.
+
+    if (age < 18) {
+      welcome();               // \   (실행)
+      //  |
+      function welcome() {     //  |
+        alert("안녕!");        //  |  함수 선언문은 함수가 선언된 블록 내
+      }                        //  |  어디에서든 유효합니다
+      //  |
+      welcome();               // /   (실행)
+
+    } else {
+
+      function welcome() { // 새롤운 welcome 함수!
+        alert("안녕하세요!");
+      }
+    }
+
+    // 여기는 중괄호 밖이기 때문에
+    // 중괄호 안에서 선언한 함수 선언문은 호출할 수 없습니다.
+
+    welcome(); // Error: welcome is not defined
+
+    //----------------------------
+    let age = prompt("나이를 알려주세요.", 18);
+
+    let welcome;
+
+    if (age < 18) {
+
+      welcome = function () {
+        alert("안녕!");
+      };
+
+    } else {
+
+      welcome = function () {
+        alert("안녕하세요!");
+      };
+
+    }
+
+    welcome(); // 제대로 동작합니다.
+
+    //----------------------------------
+    let age = prompt("나이를 알려주세요.", 18);
+
+    let welcome = (age < 18) ?
+      function () { alert("안녕!"); } :
+      function () { alert("안녕하세요!"); };
+
+    welcome(); // 제대로 동작합니다.
+
+    // 웬만하면 함수 선언식을 먼저 사용하는게 좋다!
+  </script>
+</body>
+
+</html>
