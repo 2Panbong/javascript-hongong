@@ -1,0 +1,19 @@
+<html>
+
+<body>
+  <script>
+    for (let i = 0; i < 10; i++) {
+      if (cond) {
+        // ... // <- 중첩 레벨이 하나 더 늘어났습니다.
+      }
+    }
+
+    for (let i = 0; i < 10; i++) {
+      if (!cond) continue;
+      // ...  // <- 추가 중첩 레벨이 추가되지 않습니다.
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<html>
+
+<body>
+
+  <script>
+    //메서드와 this
+    // 객체는 사용자, 주문 등과같이 실제 존재하는 개체를 표현할때 생성됩니다.
+    let user = {
+      name: "john",
+      age: 30,
+    };
+
+    user.sayHi = function () {
+      alert("안녕하세요!");
+    }
+    user.sayHi(); // 안녕하세요!
+    // 함수표현식으로 함수 만든뒤 객체에 함수를 할당해주고 호출함
+    // 객체 프로퍼티에 할당된 함수를 메서드라 합니다.
+    //------------------------------------------
+    let user = {
+      // ...
+    };
+
+    // 함수 선언
+    function sayHi() {
+      alert("안녕하세요!");
+    };
+
+    // 선언된 함수를 메서드로 등록
+    user.sayHi = sayHi; // 괄호를 안씀 함수등록할때 ㅇㅇ
+
+    user.sayHi(); // 안녕하세요!
+    //--------------------------------
+
+    user = {
+      sayHi: function () {
+        alert("Hello");
+      }
+    };
+
+    // 단축 구문을 사용하니 더 깔끔해 보이네요.
+    user = {
+      sayHi() { // "sayHi: function()"과 동일합니다.
+        alert("Hello");
+      }
+    };
+  </script>
+</body>
+
+</html>

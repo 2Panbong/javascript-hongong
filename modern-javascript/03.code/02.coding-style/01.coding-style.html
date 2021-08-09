@@ -1,0 +1,33 @@
+<html>
+
+<body>
+  <script>
+    if (n < 0) {
+      alert(`Power ${n} is not supported`);
+    } // 가장 추천하는 방법
+
+    // 가로가 길면 보기 안좋다!
+
+    if (
+      id === 123 &&
+      moonPhase === 'Waning Gibbous' &&
+      zodiacSign === 'Libra'
+    ) {
+      letTheSorceryBegin();
+    } // 최대 가로길이는 대개 80자나 120자로 제한하는게 일반적
+
+    function pow(x, n) {
+      let result = 1;
+      //              <--
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+      //              <--
+      return result;
+    }// 여분의 줄을 넣어주면 코드의 가독성이 좋아짐
+
+
+  </script>
+</body>
+
+</html>

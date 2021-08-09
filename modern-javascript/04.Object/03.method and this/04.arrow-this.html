@@ -1,0 +1,23 @@
+<html>
+
+<body>
+  <script>
+    // this가 없는 화살표 함수
+    // 화살표 함수는 일반 함수와 달리 고유한 this를 가지지않습니다
+    // 평범한 외부 함수에서 this값을 가져옴
+
+    let user = {
+      firstName: "보라",
+      sayHi() {
+        let arrow = () => alert(this.firstName);
+        arrow();
+      }
+    };
+
+    user.sayHi(); // 보라
+    // 외부 컨텍스트에 있는 this를 이용하고싶을땐 화살표함수가 유용함
+
+  </script>
+</body>
+
+</html>

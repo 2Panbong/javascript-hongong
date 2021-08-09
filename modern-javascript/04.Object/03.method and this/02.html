@@ -1,0 +1,43 @@
+<html>
+
+<body>
+
+  <script>
+    // 메서드와 this
+    // 대부분의 메서드가 객체의 프로퍼티값을 활용합니다.
+    // 메서드 내부에서 this 키워드를 사용하면 객체에 접근할 수 있습니다.
+
+    let user = {
+      name: "John",
+      age: 30,
+
+      sayHi() {
+        // 'this'는 '현재 객체'를 나타냅니다.
+        alert(this.name);
+      }
+
+    };
+
+    user.sayHi(); // John
+
+    //this를 사용하지않고 외부변수를 사용해 객체를 참조하면 오류가 날 수있음
+
+    let user = {
+      name: "John",
+      age: 30,
+
+      sayHi() {
+        alert(user.name); // Error: Cannot read property 'name' of null
+      }
+
+    };
+
+
+    let admin = user;
+    user = null; // user를 null로 덮어씁니다.
+
+    admin.sayHi(); // sayHi()가 엉뚱한 객체를 참고하면서 에러가 발생했습니다.
+  </script>
+</body>
+
+</html>

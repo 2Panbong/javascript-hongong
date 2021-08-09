@@ -1,0 +1,30 @@
+<html>
+
+<body>
+  <script>
+    //계산기 만들기
+    // read() 에선 창을 띄우고 값 두개 입력받기
+    //입력받은 값은 객체의 프로퍼티에 저장
+    // sum()은 두 값의 합을 반환
+    // mul()은 두 값의 곱을 반환
+
+    let calculator = {
+      read() {
+        this.a = +prompt("숫자를 입력하시오", 0);
+        this.b = +prompt("숫자를 입력해", 0);
+      },
+      sum() {
+        return this.a + this.b;
+      },
+      mul() {
+        return this.a * this.b;
+      }
+    };
+
+    calculator.read();
+    alert(calculator.sum());
+    alert(calculator.mul());
+  </script>
+</body>
+
+</html>

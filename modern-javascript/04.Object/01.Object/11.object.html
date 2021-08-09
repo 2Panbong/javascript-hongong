@@ -1,0 +1,23 @@
+<html>
+
+<body>
+  <script>
+    // 참조에 의한 비교
+    // 동등 연산자 == , 일치 연산자 ===는 동일하게 동작함
+    let a = {};
+    let b = a; // 참조에 의한 복사
+
+    alert(a == b); // true, 두 변수는 같은 객체를 참조합니다.
+    alert(a === b); // true
+
+    let a = {};
+    let b = {}; // 독립된 두 객체
+
+    alert(a == b); // false
+
+    //대소 비교나 원시값과의 비교에선 객체는 원시형으로 변환됨
+
+  </script>
+</body>
+
+</html>

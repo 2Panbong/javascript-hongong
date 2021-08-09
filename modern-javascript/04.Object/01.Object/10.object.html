@@ -1,0 +1,31 @@
+<html>
+
+<body>
+  <script>
+    // 참조에 의한 객체 복사
+    // 객체와 원시타입의 근본적인 차이중 하나는 참조에 의해 저장되고 복사된다는 점입니다.
+    // let message = "Hello";
+    // let phrase = message;
+
+    let user = {
+      name: "John"
+    };
+    // 객체의 참조값이 복사되고 객체는 복사되지 않습니다.
+
+    let user = { name: "John" };
+
+    let admin = user; // 참조값을 복사함
+
+    //-------------------
+    let user = { name: 'John' };
+
+    let admin = user;
+
+    admin.name = 'Pete'; // 'admin' 참조 값에 의해 변경됨
+
+    alert(user.name); // 'Pete'가 출력됨. 'user' 참조 값을 이용해 변경사항을 확인함
+    // 서랍장과 열쇠를 생각!
+  </script>
+</body>
+
+</html>

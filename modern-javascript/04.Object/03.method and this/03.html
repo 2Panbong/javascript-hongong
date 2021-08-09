@@ -1,0 +1,36 @@
+<html>
+
+<body>
+  <script>
+    // 자유로운 this
+    // 다른 언어와 동작하는게 조금 다릅니다.
+    // 모든 함수에 this를 사용할 수 있습니다.
+    // this 값은 런타임에 결정됨 컨텍스트에 따라 (컨텍스트 = 실행흐름)
+
+    let user = { name: "John" };
+    let admin = { name: "Admin" };
+
+    function sayHi() {
+      alert(this.name);
+    }
+
+    // 별개의 객체에서 동일한 함수를 사용함
+    user.f = sayHi;
+    admin.f = sayHi;
+
+    // 'this'는 '점(.) 앞의' 객체를 참조하기 때문에
+    // this 값이 달라짐
+    user.f(); // John  (this == user)
+    admin.f(); // Admin  (this == admin)
+
+    admin['f'](); // Admin (점과 대괄호는 동일하게 동작함)
+
+    // 객체가 없어도 함 수를 호출할 수 있음
+    // function sayHi() {
+    //   alert(this);
+    // }
+    // sayHi() ;; // undefined 
+  </script>
+</body>
+
+</html>
