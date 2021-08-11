@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <script>
+      // NaN은 자기자신을 포함해 어떤값과도 같지 않다.
+      alert(isNaN(NaN)); // true
+      alert(isNaN("str")); // true
+
+      alert(NaN === NaN); // false
+
+      // isFinite(value) - 숫자로 변환후 숫자가 NaN/Infinity/-Infinity가 아니면 true반환
+
+      //       Object.is는 ===처럼 값을 비교할 때 사용되는 특별한 내장 메서드인데,
+      //       아래와 같은 두 가지 에지 케이스에선 ===보다 좀 더 신뢰할만한 결과를 보여줍니다.
+
+      // NaN을 대상으로 비교할 때: Object.is(NaN, NaN) === true임.
+      // 0과 -0이 다르게 취급되어야 할 때: Object.is(0, -0) === false임.
+      // 숫자를 나타내는 비트가 모두 0이더라도 부호를 나타내는 비트는 다르므로 0과 -0은 사실 다른 값이긴 합니다.
+    </script>
+  </body>
+</html>

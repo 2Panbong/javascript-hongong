@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <script>
+      // 자바스크립트는 객체 프로퍼티 키로 오직 문자형과 심볼형만 허용함
+
+      // 심볼은 유일한 식별자를 만들고 싶을 때 사용합니다.
+
+      //id는 새로운 심볼이 됩니다.
+      let id = Symbol();
+
+      //  심볼 id에는 "id"라는 설명이 붙습니다.
+      //  심볼은 유일성이 보장되는 자료형
+      let id = Symbol("id");
+
+      // 서로 다른 심볼
+      let id1 = Symbol("id");
+      let id2 = Symbol("id");
+
+      alert(id1 == id2); // false
+
+      // 심볼은 문자형으로 자동 형변환 되지 않는다.
+      let id = Symbol("id");
+      alert(id); // TypeError: Cannot convert a Symbol value to a string
+      // 하지만 반드시 형변환을 하고싶다면 toString()을 써라
+      alert(id.toString()); // 하면 얼럿창에 출력됨
+    </script>
+  </body>
+</html>

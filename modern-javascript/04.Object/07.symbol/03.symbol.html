@@ -1,0 +1,46 @@
+<html>
+  <body>
+    <script>
+      //Symbols in a literal
+      // 객체 리터럴{}을 사용해 객체를 만든경우 대괄호를 사용해 심볼형 키를 만들어야합니다.
+      let id = Symbol("id");
+
+      let user = {
+        name: "John",
+        [id]: 123, // "id": 123은 안됨
+      };
+
+      // 심볼은 for -in에서 배제됨
+      let id = Symbol("id");
+      let user = {
+        name: "John",
+        age: 30,
+        [id]: 123,
+      };
+
+      for (let key in user) alert(key); // name과 age만 출력되고, 심볼은 출력되지 않습니다.
+
+      // 심볼로 직접 접근하면 잘 작동합니다.
+      alert("직접 접근한 값: " + user[id]);
+
+      //Object.assign은  전부다 복제됨
+
+      // 전역 레지스트리에서 심볼을 읽습니다.
+      let id = Symbol.for("id"); // 심볼이 존재하지 않으면 새로운 심볼을 만듭니다.
+
+      // 동일한 이름을 이용해 심볼을 다시 읽습니다(좀 더 멀리 떨어진 코드에서도 가능합니다).
+      let idAgain = Symbol.for("id");
+
+      // 두 심볼은 같습니다.
+      alert(id === idAgain); // true
+
+      // 이름을 이용해 심볼을 찾음
+      let sym = Symbol.for("name");
+      let sym2 = Symbol.for("id");
+
+      // 심볼을 이용해 이름을 얻음
+      alert(Symbol.keyFor(sym)); // name
+      alert(Symbol.keyFor(sym2)); // id
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+
+<body>
+  <script>
+    let arr = ["I", "go", "home"];
+
+    delete arr[1]; // "go"를 삭제합니다.
+
+    alert(arr[1]); // undefined
+
+    // delete를 써서 요소를 지우고 난 후 배열 --> arr = ["I",  , "home"];
+    alert(arr.length); // 3
+    // delete를 쓰면 뻥 뚫린다.
+
+    let arr = ["I", "study", "JavaScript"];
+
+    arr.splice(1, 1); // 인덱스 1부터 요소 한 개를 제거
+
+    alert(arr); // ["I", "JavaScript"]
+
+    let arr = ["I", "study", "JavaScript", "right", "now"];
+
+    // 처음(0) 세 개(3)의 요소를 지우고, 이 자리를 다른 요소로 대체합니다.
+    arr.splice(0, 3, "Let's", "dance");
+
+    alert(arr) // now ["Let's", "dance", "right", "now"]
+  </script>
+</body>
+
+</html>
