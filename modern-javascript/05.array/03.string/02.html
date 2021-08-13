@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <script>
+      // 'viagra', 'XXX' 문자열 있으면 true checkSpam(str)함수 만들기
+      // 해당 문자열 없으면 false반환
+      // 대 소문자 관계없이 면 둘중하나를 만들어야함 대문자나 소문자
+      // 소문자가 더 많으니까 소문자로 만들어보자
+
+      function checkSpam(str) {
+        spam = str.toLowerCase();
+        if (spam.includes("viagra") || spam.includes("xxx")) return true;
+        else return false;
+      }
+
+      console.log(checkSpam("buy ViAgRA now")); //== true;
+      console.log(checkSpam("free xxxxx")); //== true;
+      console.log(checkSpam("innocent rabbit")); // == false;
+    </script>
+  </body>
+</html>

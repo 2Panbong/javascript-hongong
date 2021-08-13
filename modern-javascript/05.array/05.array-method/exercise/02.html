@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <script>
+      // 특정 범위에 속하는 요소 찾기
+      // 배열arr요소중 a이상 b이하에 속하는 요소만 골라 새로운 배열에 집어넣고 해당 함수 출력
+      // 새로작성하는건 기존 배열을 변경하면 안되고 반횐되는건 새로운 배열이어야함
+
+      function filterRange(arr, a, b) {
+        let newArr = arr.filter((item) => item >= a && item <= b);
+        return newArr;
+      }
+
+      let arr = [5, 3, 8, 1];
+
+      let filtered = filterRange(arr, 1, 4);
+
+      console.log(filtered); // 3,1 (조건에 맞는 요소)
+
+      console.log(arr); // 5,3,8,1 (기존 배열은 변경되지 않았습니다.)
+    </script>
+  </body>
+</html>

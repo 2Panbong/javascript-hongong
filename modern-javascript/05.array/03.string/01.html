@@ -1,9 +1,14 @@
 <html>
   <body>
     <script>
-      //includes는 트루값이었고 indexof는 인덱스 위치 반환 없으면 -1을 반환
+      // 첫글자를 대문자로 변경하기
 
-      console.log("t".codePointAt(0));
+      function ucFirst(str) {
+        if (str == undefined) return str;
+        str = str[0].toUpperCase() + str.slice(1);
+      }
+
+      console.log(ucFirst("john"));
     </script>
   </body>
 </html>

@@ -1,0 +1,46 @@
+<html>
+  <body>
+    <script>
+      //"my-short-string"같이
+      //  여러 단어를 대시(-)로 구분한 문자열을
+      //  카멜 표기법을 사용한 문자열 "myShortString"로 변경해주는 함수를 작성해보세요.
+      // 대시는 모두 지우고 각 단어의 첫 번째 글자는 대문자로 써주면 됩니다.
+
+      // function camelize(str) {
+      //   let changeStr = str.split("-"); // 이거지금 문자열을 배열로 만 든거임
+
+      //   changeStr[0].toUpperCase();
+      //   changeStr.join("");
+      //   console.log(changeStr);
+      // }
+
+      function camelize(str) {
+        // 구분자로 문자열 나눠서 배열화
+        let strArr = str.split("-");
+        console.log(strArr);
+
+        let strA = strArr.map((item, index) =>
+          index == 0 ? item : item[0].toUpperCase() + item.slice(1)
+        );
+
+        return strA.join("");
+      }
+      // 첫번째 반복
+      // acc =""
+      // item = "background"
+      // index =0
+      // acc = acc + "background"
+      //   str.reduce(
+      //     (acc, item, index) =>
+      //       acc + (index == 0 ? item : item[0].toUpperCase() + item.substr[1]),
+      //     /// usvstr은 해당인덱스번호부터 쭉length를반환함
+      //     ""
+      //   );
+      // }
+
+      console.log(camelize("background-color"));
+      console.log(camelize("list-style-image"));
+      console.log(camelize("-webkit-transition"));
+    </script>
+  </body>
+</html>

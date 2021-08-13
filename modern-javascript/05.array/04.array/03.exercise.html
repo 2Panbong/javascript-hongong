@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <script>
+      // 배열 컨텍스트에서 함수 호출하기
+      let arr = ["a", "b"];
+
+      arr.push(function () {
+        alert(this);
+      });
+
+      arr[2](); //  함수호출
+    </script>
+  </body>
+</html>
