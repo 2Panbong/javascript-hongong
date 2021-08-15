@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>asyncVSdefer</title>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <!--1  head안에 스크립트를 포함하게 되면 js파일이 크다면 웹사이트를 보는데 까지 많은 시간이 소요됨 -->
+    <!-- 그래서 head안에 넣는것은 좋지 않은 방법-->
+
+    <!--2 body안에 넣는다면 HTML컨텐츠를 빨리 볼수 있지만 사용자가 의미있는 컨텐츠를 보기위해서 있는 것들은
+    fetching하는 시간이 많이 걸린다는 단점이 있음
+    -->
+
+    <!--3  asyn 불리언 타입의 속성값이라 선언하면 바로 true가 됨 병렬로 js파일이 받자고 명령을 해놓고
+      js파일이 다완료가 되면 다운로드된 것들을 실행하게됨 그리고 나머지 
+      HTML을 실행하게됨  그럼 2번방법보다 다운로드 받는 시간을 절약할 수 있음
+      하지만 HTMl이 실행되기도전에 실행되기 때문에 조작하려고 하는 시점에 원하는 요소가 정의되어있지 않을 수 있음
+      그리고 사용자가 페이지를 보는데 시간인 걸릴 수 있는 단점이 있음
+    -->
+
+    <!-- 4 defer: js파일 다운로드 명령만 시켜놓고 HTML을 받게됨 HTML이 끝나면 다운로드된 js를 실행-->
+
+    <!-- async가 여러개라면 정의돈 순서에 상관없이 다운로드 된게 실행이 먼저될 수 있음-->
+    <!-- defer는 여러개라면 다운로드 명령실행하고 HTML이 다 받아진다음에 순서대로 실행-->
+  </body>
+</html>
