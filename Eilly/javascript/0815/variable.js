@@ -3,7 +3,7 @@
  // use this for valina Javascript
  'use strcit';
 
- // 2 Variable
+ // 2 Variable rw(read/write)
  // let (added in ES6) -> ES6에서 추가됨
  let globalName= 'global name';
 {
@@ -27,10 +27,16 @@ var age;
 
 let name;
 
-// 3. Constants - 한번 할당하면 값이 절대 바뀌지 않음
+// 3. Constant - 한번 할당하면 값이 절대 바뀌지 않음 (read only)
 const dayInweek = 7; // Immutable Data Type
 const maxNumber =5;
 // 값이 변경 될수 있는 것을 "Mutable Data Type" 이라고함 바이러스가 이런것
+
+// Note!
+// favor immutable data type always for a fow reasons:
+// - securiy
+// - thread safety
+// - reduce human mistakes
 
 // 4 . Variable types
 // 어떤 데이터든 primitive(숫자 문자열,불린,null,undefined,symbol), object(box container)  타입두가지로 나뉘어진다.
