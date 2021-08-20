@@ -26,6 +26,9 @@ const user: User = {
   // lastname:"Smith",  
 };
 
+// 속성 추가 불가함
+// user.phone = "01012341929";
+
 const users: User[] = [
   {firstname:"John", lastname: "Smith"},
   {firstname:"Gildong", lastname :"Hong"}

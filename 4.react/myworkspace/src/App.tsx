@@ -25,7 +25,7 @@
 // 내부적으로 가상 DOM tree를 관리함
 
 // 렌더링(rendering) : 화면에 그리기
-// 가상DOM을 생성하고 렌더링시점(event loop)에 가상DOM을 HTML DOM으로 그림 
+// 가상DOM을 생성하고 렌더링시점(event loop)에 가상DOM을 HTML DOM으로 그림
 
 // 일반 DOM
 // DOM을 조작할 때마다 rendering 함, 성능 저하
@@ -35,41 +35,47 @@
 
 // react 관련 자료는 2020년 이후 것으로만
 
-// Function Component 
+// Function Component
 // 대문자로 시작함
 // JSX Element를 반환함
 // JS함수인데 , JSX Element를 반환함 == Component
 // 리액트에서 컴포넌트는 JSX Element를 렌더링하는 함수
 
-import Header from './components/Header';
-import Button from './components/Button';
-import Counter from './components/Counter';
-import Calculator from './components/Calculator';
+import Header from "./components/Header";
+import Button from "./components/Button";
+import Counter from "./components/Counter";
+import Calculator from "./components/Calculator";
+import Generator from "./components/Generator";
+import AccountManager from "./components/AccountManager";
+import Hello from "./components/Hello";
 
 // React == 컴포넌트 개발 라이브러리
 function App() {
   return (
     // main container
-    <div style={{width:"500px", margin:"0 auto"}}>  
-    {/* JSX 내부에서 주석 달기 */}
-    {/* 재사용하지 않는 컴포넌트 */}
-    {/* <h1 style ={{ color:"red" }}>Hello React with Typescript !</h1> */}
+    <div style={{ width: "500px", margin: "0 auto" }}>
+      {/* JSX 내부에서 주석 달기 */}
+      {/* 재사용하지 않는 컴포넌트 */}
+      {/* <h1 style ={{ color:"red" }}>Hello React with Typescript !</h1> */}
 
-    {/* 속성값을 변경하여 재사용하는 컴포넌트 */}
-    {/* Component의 속성(prop)을 넘김 */}
-    {/* 속성명={속성값]} */}
-    <Header color={"red"} title={"React"} />
-    <Header color={"green"} title={"Typescript"} />    
-    <Header color={"blue"} title={"Function Component"} />
+      {/* 속성값을 변경하여 재사용하는 컴포넌트 */}
+      {/* Component의 속성(prop)을 넘김 */}
+      {/* 속성명={속성값]} */}
+      <Header color={"red"} title={"React"} />
+      <Header color={"green"} title={"Typescript"} />
+      <Header color={"blue"} title={"Function Component"} />
 
-    {/* <Button color={"black"} backgroundColor={"red"} text = {"Delete"} />
+      {/* <Button color={"black"} backgroundColor={"red"} text = {"Delete"} />
     <Button color={"black"} backgroundColor={"green"} text = {"Done"} />     */}
-    <Button variant={"primary"} text = {"Add"} />
-    <Button variant={"secondary"} text = {"Delete"} />
-    <Button variant={"warning"} text = {"Delete"} />
+      <Button variant={"primary"} text={"Add"} />
+      <Button variant={"secondary"} text={"Delete"} />
+      <Button variant={"warning"} text={"Delete"} />
 
-    <Counter />
-    <Calculator />
+      <Counter />
+      <Calculator />
+      <Generator />
+      <AccountManager />
+      <Hello />
     </div>
   );
 }

@@ -18,7 +18,7 @@ import { useState } from "react";
 //     <div>50</div>
 
 // 그냥 export default 하면 되긴하는데 warnigs이 뜸
-const Calculator = () => {
+const CalculatorRef = () => {
   const [result, setResult] = useState(0);
   const calculate = () => {
     const a = prompt("첫번째 숫자");
@@ -42,6 +42,7 @@ const Calculator = () => {
   return (
     <div>
       <h2>Calculator</h2>
+      {/* 입력박스 3개, 첫번째 숫자/두번째숫자/연산자 */}
       <button
         onClick={() => {
           calculate();
@@ -54,4 +55,4 @@ const Calculator = () => {
   );
 };
 
-export default Calculator;
+export default CalculatorRef;
