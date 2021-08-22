@@ -1,6 +1,7 @@
-function sayHello(nameOfPerson, age) {
-console.log("Hello my name is " +nameOfPerson + " and I'm " + age)
+const age = 96;
+function calculateKrAge(ageOfForeigner) {
+  return ageOfForeigner + 2;
 }
-sayHello("nico",10);
-sayHello("dal",23);
-sayHello("lynn",21);
+
+const krAge = calculateKrAge(age);
+console.log(krAge);
