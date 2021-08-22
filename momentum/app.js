@@ -1,7 +1,13 @@
-const age = 96;
-function calculateKrAge(ageOfForeigner) {
-  return ageOfForeigner + 2;
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
+
+function onLoginBtnClick() {
+  const username = loginInput.value;
+  if (username === "") {
+    alert("Please write your name");
+  } else if (username.length > 10) {
+    alert("Your name is too long");
+  }
 }
 
-const krAge = calculateKrAge(age);
-console.log(krAge);
+loginButton.addEventListener("click", onLoginBtnClick);
