@@ -1,6 +1,8 @@
 // @import "/4.react/myworkspace/node_modules/bootstrap/scss/bootstrap.scss";
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+// @import "~bootstrap/scss/bootstrap";
+
 @import "../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
@@ -33,6 +35,10 @@ $border-radius: 0;
 // Layout & Components
 @import "../node_modules/bootstrap/scss/buttons";
 @import "../node_modules/bootstrap/scss/card";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/list-group";
+@import "../node_modules/bootstrap/scss/alert";
+
 /* ------------------------------------------------------------------------ */
 @import "../node_modules/bootstrap/scss/helpers";
 
