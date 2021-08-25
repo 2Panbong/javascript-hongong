@@ -9,8 +9,8 @@ import { TodoState } from "./type";
 
 interface ModalProp {
   item: TodoState;
-  onClose: () => void;
-  onSave: (editItem: TodoState) => void;
+  onClose: () => void; // 콜백함수
+  onSave: (editItem: TodoState) => void; // 콜백함수
 }
 
 const TodoEditModal = ({ item, onClose, onSave }: ModalProp) => {
@@ -31,10 +31,11 @@ const TodoEditModal = ({ item, onClose, onSave }: ModalProp) => {
   return (
     <>
       {/* 회색 뒤쪽 영역 */}
-      <GrayLayer />
+      {/* <GrayLayer /> */}
       {/*  모달 영역 */}
       <div
         className="modal d-block"
+        style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
         onClick={() => {
           onClose();
         }}
