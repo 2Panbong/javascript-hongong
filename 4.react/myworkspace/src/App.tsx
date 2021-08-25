@@ -60,7 +60,7 @@ import Home from "./components/Home";
 // 	-> 컴파일 됐을 때 파일크기가 커짐, 초기 로딩할 때 시간 걸림
 
 const Todo = lazy(() => import("./components/todo/Todo"));
-const Feed = lazy(() => import("./components/Feed"));
+const Feed = lazy(() => import("./components/feed/Feed"));
 
 // React == 컴포넌트 개발 라이브러리
 function App() {

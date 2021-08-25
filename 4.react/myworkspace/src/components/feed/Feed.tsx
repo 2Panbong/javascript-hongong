@@ -1,7 +1,7 @@
 import produce from "immer";
 import { useRef, useState } from "react";
 
-import SadCat from "./SadCat";
+import SadCat from "../SadCat";
 
 interface FeedState {
   id: number;

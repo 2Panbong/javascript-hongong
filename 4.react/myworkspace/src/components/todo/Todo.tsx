@@ -55,12 +55,12 @@ const Todo = () => {
     );
   };
 
-  const save = (edititem: TodoState) => {
+  const save = (editItem: TodoState) => {
     setTodoList(
       produce((state) => {
-        const item = state.find((item) => item.id === edititem.id);
+        const item = state.find((item) => item.id === editItem.id);
         if (item) {
-          item.memo = edititem.memo;
+          item.memo = editItem.memo;
         }
       })
     );
