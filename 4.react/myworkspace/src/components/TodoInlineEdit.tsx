@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
 import Alert from "./base/Alert";
 
-// 1건에대한 타입
+import produce from "immer";
+
+// 1건에 대한 타입
 interface TodoState {
   id: number;
   memo: string | undefined;
@@ -11,23 +13,21 @@ interface TodoState {
 }
 
 const getTimeString = (unixtime: number) => {
-  // Locale : timezone, currency 등
+  // Locale: timezone, currency 등
   // js에서는 브라우저의 정보를 이용함
-
   const dateTime = new Date(unixtime);
-
   return `${dateTime.toLocaleDateString()} ${dateTime.toLocaleTimeString()}`;
 };
 
 const Todo = () => {
   // todo 여러건에 대한 state
-  // 참고)new Date().getTime() -> unix time 생성됨
+  // 참고) new Date().getTime() -> unix time 생성됨
   const [todoList, setTodoList] = useState<TodoState[]>([
-    { id: 2, memo: "Typescript 연습", createTime: new Date().getTime() },
+    { id: 2, memo: "Typescript", createTime: new Date().getTime() },
     { id: 1, memo: "React State 연습", createTime: new Date().getTime() },
   ]);
 
-  // 빈값 여부 state
+  // 빈 값 여부 state
   const [isError, setIsError] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -40,14 +40,11 @@ const Todo = () => {
       if (e.code !== "Enter") return;
     }
 
-    // // 입력값이 없으면 에러 메시지 표시
-    if (!formRef.current?.value) {
+    // 입력값이 없으면 에러 메시지 표시
+    if (!inputRef.current?.value) {
       setIsError(true);
       return;
     }
-
-    // // 에러 메시지 제거
-    setIsError(false);
 
     const todo: TodoState = {
       id: todoList.length > 0 ? todoList[0].id + 1 : 1,
@@ -56,29 +53,78 @@ const Todo = () => {
       createTime: new Date().getTime(),
     };
 
-    setTodoList([todo, ...todoList]);
+    // console.log(todoList);
+    // immer 없이 새로운 배열을 생성하여 state 변경
+    // setTodoList([todo, ...todoList]);
 
+    // current state -> draft state -> next state
+    // draft state를 조작함
+    setTodoList(
+      // produce(([draftstate변수]) => {draft state 변수 조작})
+      // 반환 객체는 변경된 state(next state)
+      produce((state) => {
+        // draft state 배열에 추가
+        // draft state의 타입은 TodoState[]
+        state.unshift(todo);
+      })
+    );
+
+    // 입력값 초기화
     formRef.current?.reset();
+    // 에러 메시지 제거
+    setIsError(false);
   };
 
-  const del = (id: number) => {
+  const del = (id: number, index: number) => {
+    console.log(id);
+
     // 불변성 때문에 splice를 사용할 수 없음
     // 주로 filter 함수를 사용
-    // filter 함수로 id를 제외하고 새로운 배열로 리턴함.
-    setTodoList(todoList.filter((item) => item.id !== id));
+    // filter 함수로 해당 id를 제외하고 새로운 배열로 리턴함.
+    // immer 없이 사용
+    // setTodoList(todoList.filter((item) => item.id !== id));
+
+    // immer로 state 배열 직접 조작
+    // setTodoList(
+    //   produce((state) => {
+    //     // id로 해당 item을 찾음
+    //     const item = state.find((item) => item.id === id);
+    //     if (item) {
+    //       // 해당 item의 index로 배열에서 삭제
+    //       state.splice(state.indexOf(item), 1);
+    //     }
+    //   })
+    // );
+
+    // immer로 state 배열 직접 조작(index로 삭제)
+    setTodoList(
+      produce((state) => {
+        state.splice(index, 1);
+      })
+    );
   };
 
   const edit = (id: number, mod: boolean) => {
     // 해당 id에 해당하는 item만 edit 모드로 변경함
     // 해당 item의 속성을 변경한 후 변경된 item을 반환
     // map 함수는 새로운 배열을 반환하는 함수, 배열길이는 기존 배열 길이와 같음
+    // immer 없이 사용
+    // setTodoList(
+    //   todoList.map((item) => {
+    //     if (item.id === id) {
+    //       item.isEdit = mod;
+    //     }
+    //     return item;
+    //   })
+    // );
+    // immer를 사용해서 해당 요소를 변경
     setTodoList(
-      todoList.map((item) => {
-        if (item.id === id) {
+      produce((state) => {
+        // 해당 id값에 해당하는 요소를 찾음
+        const item = state.find((item) => item.id === id);
+        if (item) {
           item.isEdit = mod;
         }
-
-        return item;
       })
     );
   };
@@ -88,16 +134,30 @@ const Todo = () => {
 
     // ul 밑에 있는 입력박스중에서 index번째 입력박스만 선택
     const input = ulRef.current?.querySelectorAll("input")[index];
+
+    // immer 없이 map함수로 새로운 배열을 반환 후 변경
+    // setTodoList(
+    //   todoList.map((item) => {
+    //     // 해당 id의 item의 값을 변경
+    //     if (item.id === id) {
+    //       item.memo = input?.value;
+    //       item.modifyTime = new Date().getTime();
+    //       item.isEdit = false;
+    //     }
+
+    //     return item;
+    //   })
+    // );
+
+    // immer를 사용하여 해당 요소를 직접변경
     setTodoList(
-      todoList.map((item) => {
-        // 해당 id의 item의 값을 변경
-        if (item.id === id) {
+      produce((state) => {
+        const item = state.find((item) => item.id === id);
+        if (item) {
           item.memo = input?.value;
           item.modifyTime = new Date().getTime();
           item.isEdit = false;
         }
-
-        return item;
       })
     );
   };
@@ -108,10 +168,11 @@ const Todo = () => {
       <form
         className="d-flex"
         ref={formRef}
-        /* event.preventDefault();
-         // 기본 이벤트 작업을 처리하지 않음
-          - sumbit form
-         */
+        /* 
+          event.preventDefault(); 
+          - 기본이벤트 작업을 처리하지 않음 
+          - submit form
+        */
         onSubmit={(e) => e.preventDefault()}
       >
         <input
@@ -119,7 +180,6 @@ const Todo = () => {
           className="form-control me-2"
           placeholder="할 일 ..."
           ref={inputRef}
-          /*keyup말고 keypress를 함 keyup은 엔터키 두번이 입력되더라 */
           onKeyPress={(e) => {
             add(e);
           }}
@@ -136,7 +196,7 @@ const Todo = () => {
       </form>
       {isError && (
         <Alert
-          message={"내용을 입력해주세요"}
+          message={"내용을 입력해주세요."}
           variant={"danger"}
           // 닫기 버튼을 클릭할 때 처리하는 함수를 넘김
           onClose={() => {
@@ -178,12 +238,11 @@ const Todo = () => {
                 수정
               </button>
             )}
-
             {!item.isEdit && (
               <button
-                className="btn btn-outline-secondary btn-sm ms-2 me-1 text-nowrap"
+                className="btn btn-outline-secondary btn-sm text-nowrap"
                 onClick={() => {
-                  del(item.id);
+                  del(item.id, index);
                 }}
               >
                 삭제
@@ -192,7 +251,7 @@ const Todo = () => {
             {/* 수정모드일 때 보이는 버튼 */}
             {item.isEdit && (
               <button
-                className="btn btn-outline-secondary btn-sm me-1 text-nowrap"
+                className="btn btn-outline-secondary btn-sm ms-2 me-1 text-nowrap"
                 onClick={() => {
                   save(item.id, index);
                 }}
@@ -202,7 +261,7 @@ const Todo = () => {
             )}
             {item.isEdit && (
               <button
-                className="btn btn-outline-secondary btn-sm ms-2 me-1 text-nowrap"
+                className="btn btn-outline-secondary btn-sm text-nowrap"
                 onClick={() => {
                   edit(item.id, false);
                 }}
