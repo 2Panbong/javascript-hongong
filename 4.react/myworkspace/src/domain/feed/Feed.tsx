@@ -90,7 +90,7 @@ const Feed = () => {
   // };
 
   return (
-    <>
+    <div style={{ width: "40vw" }} className="mx-auto">
       <form
         id="form-input"
         className="mt-5"
@@ -173,7 +173,7 @@ const Feed = () => {
           </div>
         )
       )}
-    </>
+    </div>
   );
 };
 

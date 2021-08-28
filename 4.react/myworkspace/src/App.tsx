@@ -51,7 +51,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
 
-import Home from "./components/Home";
+import Home from "./domain/Home";
 
 // SPA(Single Page Application)
 // :페이지 파일이 1개, index.htmp
@@ -59,19 +59,18 @@ import Home from "./components/Home";
 // : 에플리케이션 처음 로딩될 때 import한  컴포넌트를 로딩함
 // 	-> 컴파일 됐을 때 파일크기가 커짐, 초기 로딩할 때 시간 걸림
 
-const Todo = lazy(() => import("./components/todo/Todo"));
-const Feed = lazy(() => import("./components/feed/Feed"));
+const Todo = lazy(() => import("./domain/todo/Todo"));
+const Feed = lazy(() => import("./domain/feed/Feed"));
 
 // React == 컴포넌트 개발 라이브러리
 function App() {
   return (
     <Router>
       {/* main container */}
-      <div style={{ width: "900px" }} className="mx-auto">
-        <nav
-          style={{ width: "200px", height: "100vh", top: "20px" }}
-          className="position-fixed"
-        >
+      <div className="mx-auto">
+        <header className="app-bar bg-primary shadow">App Bar</header>
+        <nav className="drawer-menu position-fixed bg-light shadow-sm">
+          <h3 className="ms-2">MY WORKSPACE</h3>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -84,7 +83,7 @@ function App() {
             </li>
           </ul>
         </nav>
-        <main style={{ marginLeft: "200px", marginTop: "20px" }}>
+        <main className="content-container">
           {/* Suspense 컴포넌트로 로딩중에 보여줄 화면을 처리하는 것 */}
           {/* fallback ={로딩중에 보여줄 컴포넌트} */}
           <Suspense fallback={<div>Loading...</div>}>
