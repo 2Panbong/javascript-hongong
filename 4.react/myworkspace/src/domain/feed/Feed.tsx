@@ -129,6 +129,7 @@ const Feed = () => {
       {feed.map((item, index) =>
         item.type === "video/mp4" ? (
           <div key={item.id} className="card">
+            <div className="card-header">Featured</div>
             <video controls>
               <source src={item.url} type="video/mp4"></source>
             </video>
